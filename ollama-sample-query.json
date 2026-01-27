@@ -1,0 +1,68 @@
+{
+  "model": "hf.co/ai-sage/GigaChat3-10B-A1.8B-GGUF:Q6_K",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Расшифруй обозначение: ОТВОД 108*4 СТ20 90"
+    }
+  ],
+  "stream": false,
+  "format": {
+    "type": "object",
+    "properties": {
+      "fitting_name": {
+        "type": "enum",
+        "description": "Наименование фиттинга",
+        "enum": [
+          "Отвод"
+        ]
+      },
+      "angle": {
+        "type": "enum",
+        "description": "Угол изгиба (градусы)",
+        "enum": [
+          "45",
+          "60",
+          "90",
+          "180"
+        ]
+      },
+      "D_diameter": {
+        "type": "string",
+        "description": "Наружный диаметр присоединяемых труб (мм)"
+      },
+      "T_thickness": {
+        "type": "string",
+        "description": "Толщина стенки (мм)"
+      },
+      "steel_grade": {
+        "type": "enum",
+        "description": "Марка стали",
+        "enum": [
+          "Ст10",
+          "Ст20",
+          "10Г2",
+          "20ЮЧ",
+          "20ЮЧ",
+          "15ГС",
+          "15ГС",
+          "09Г2С",
+          "16ГС",
+          "17ГС",
+          "17Г1С",
+          "10Г2С1"
+        ]
+      },
+      "document": {
+        "type": "string",
+        "description": "Нормативный документ (ГОСТ, ТУ и т.д.)"
+      }
+    },
+    "required": [
+      "fitting_name",
+      "angle",
+      "D_diameter",
+      "T_thickness"
+    ]
+  }
+}
